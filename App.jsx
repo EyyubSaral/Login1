@@ -12,6 +12,14 @@ export default function App() {
     setUserName("");
   };
 
+  const [clicked, setClicked] = useState(false);
+
+  const handleClick = () => {
+    setClicked(true);
+    alert("Unutuysanız geçmiş olsun bizde de yok");
+    setTimeout(() => setClicked(false), 200); // 200ms sonra eski haline döner
+  };
+
   return (
     <div style={{ display: "flex", height: "400px" }}>
       {/* Sol taraf - Login Form */}
@@ -92,8 +100,24 @@ export default function App() {
               fontWeight: "500",
             }}
           >
-            <span>Forgot password</span>
-            <span>Register</span>
+            <span
+              onClick={handleClick}
+              style={{
+                display: "inline-block",
+                cursor: "pointer",
+                transition: "transform 0.2s ease",
+                transform: clicked ? "scale(1.3)" : "scale(1)",
+              }}
+            >
+              Forgot password
+            </span>
+            <span
+              onClick={() => {
+                alert("Şuan mevut değil");
+              }}
+            >
+              Register
+            </span>
           </div>
         </form>
       </div>
