@@ -21,7 +21,7 @@ export default function App() {
   };
 
   return (
-    <div style={{ display: "flex", height: "400px" }}>
+    <div style={{ display: "flex", height: "400px", width:"800px"}}>
       {/* Sol taraf - Login Form */}
       <div
         style={{
